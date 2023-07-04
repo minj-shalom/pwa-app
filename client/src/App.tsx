@@ -1,7 +1,10 @@
 import "./App.css";
 import { PWALogo } from "@/assets";
+import { useSubscribe } from "./subscribe";
 
 function App() {
+  const { mutate } = useSubscribe();
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.ts");
   }
@@ -10,15 +13,24 @@ function App() {
     navigator.serviceWorker.ready.then((registration) => {
       registration.pushManager.getSubscription().then((subscription) => {
         if (subscription) {
-          // save subscription on DB
+          mutate({
+            endpoint: subscription.endpoint,
+            p256dh: JSON.parse(JSON.stringify(subscription)).keys.p256dh,
+            auth: JSON.parse(JSON.stringify(subscription)).keys.auth,
+          });
         } else {
           registration.pushManager
             .subscribe({
               userVisibleOnly: true,
-              applicationServerKey: "",
+              applicationServerKey:
+                "BKs77j4GvBobTHxZJqbN55eXoCF6wJNnN9_C-r4-WO7bM9RXwct9c8XmYKdMGBp9poI7oY7JcgBDseX7_3Dy50k",
             })
             .then((subscription) => {
-              // save subscription on DB
+              mutate({
+                endpoint: subscription.endpoint,
+                p256dh: JSON.parse(JSON.stringify(subscription)).keys.p256dh,
+                auth: JSON.parse(JSON.stringify(subscription)).keys.auth,
+              });
             });
         }
       });

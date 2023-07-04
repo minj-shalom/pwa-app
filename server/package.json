@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
+    "@types/web-push": "^3.3.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "web-push": "^3.6.3"
   }
 }

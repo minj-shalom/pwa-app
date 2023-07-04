@@ -22,3 +22,9 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    /* content: url("../public/favicon-light.png"); */
+  }
+}
