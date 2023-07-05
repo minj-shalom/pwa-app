@@ -1,6 +1,9 @@
+/// <reference lib="webworker" />
+export default null;
+declare let self: ServiceWorkerGlobalScope;
+
 self.addEventListener("push", (event: any) => {
   const { title, body } = event.data.json();
-  console.log("!!!", title, body);
 
   event.waitUntil(
     self.registration.showNotification(title, {

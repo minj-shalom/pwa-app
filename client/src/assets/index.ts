@@ -1,2 +1,3 @@
 /* Assets - Logos */
-export { default as PWALogo } from "./logos/progressive-web-apps-logo.png";
+export { default as PWALightLogo } from "./logos/progressive-web-apps-light-logo.png";
+export { default as PWADarkLogo } from "./logos/progressive-web-apps-dark-logo.png";

@@ -1,5 +1,5 @@
 import "./App.css";
-import { PWALogo } from "@/assets";
+import { PWALightLogo } from "./assets";
 import { useSubscribe } from "./subscribe";
 
 function App() {
@@ -39,9 +39,13 @@ function App() {
 
   return (
     <>
-      <div>
-        <img src={PWALogo} className="logo" alt="PWA logo" />
-      </div>
+      <a
+        href={import.meta.env.VITE_LOGO_URL}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <img src={PWALightLogo} className="logo" alt="PWA logo" />
+      </a>
       <h1>Progressive Web Apps</h1>
       <div className="card">
         <button onClick={handleClick}>Push Notification</button>
