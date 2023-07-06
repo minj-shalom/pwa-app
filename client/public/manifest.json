@@ -1,0 +1,19 @@
+{
+  "name": "PWA App",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "favicon-dark.png",
+      "type": "image/png",
+      "sizes": "1000x1000",
+      "media": "(prefers-color-scheme: dark)"
+    },
+    {
+      "src": "favicon-light.png",
+      "type": "image/png",
+      "sizes": "1000x1000",
+      "media": "(prefers-color-scheme: light)"
+    }
+  ],
+  "display": "standalone"
+}
