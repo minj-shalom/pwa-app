@@ -22,7 +22,7 @@ webpush.setVapidDetails(
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://pwa.minj-shalom.dev"],
     methods: "GET, POST, PATCH, PUT, DELETE",
   })
 );
